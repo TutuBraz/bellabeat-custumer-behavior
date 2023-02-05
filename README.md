@@ -1,10 +1,6 @@
 # bellabeat-custumer-behavior
 Final project of the course : Google Data Analitics from Coursera. 
 
-## Introdução
-Bem-vindo ao estudo de caso de análise de dados da Bellabeat! Neste estudo de caso, você realizará muitas tarefas do mundo real de um analista de dados júnior. Imagine que está trabalhando para a Bellabeat, uma fabricante de alta tecnologia de produtos voltados à saúde para mulheres, e conheça diferentes personagens e membros da equipe. Para responder às principais perguntas de negócios, siga as etapas do processo de análise de dados: perguntar, preparar, processar, analisar, compartilhar e agir. Ao longo do caminho, as tabelas do Roteiro do estudo de caso, incluindo perguntas de orientação e tarefas principais, o ajudarão a permanecer no caminho certo.
-
-Ao final desta lição, você terá um estudo de caso pronto para o seu portfólio. Faça o download do pacote e consulte os detalhes deste estudo de caso a qualquer momento. Então, quando iniciar sua busca por emprego, seu estudo de caso será uma maneira tangível de demonstrar seus conhecimentos e habilidades para potenciais empregadores.
 
 ## Cenário
 Você é um analista de dados júnior que trabalha na equipe de analistas de marketing da Bellabeat, uma fabricante de produtos de alta tecnologia voltados à saúde para mulheres. A Bellabeat é uma pequena empresa de sucesso, mas tem potencial para se adquirir maior participação no mercado
@@ -41,3 +37,6 @@ A Urška solicita que você analise os dados de uso de dispositivos inteligentes
 1.	Quais são algumas das tendências no uso de dispositivos inteligentes?
 2.	Como essas tendências podem se aplicar aos clientes da Bellabeat?
 3.	Como essas tendências podem ajudar a influenciar a estratégia de marketing da Bellabeat?
+
+## Fonte de dados:
+https://www.kaggle.com/datasets/arashnic/fitbit
