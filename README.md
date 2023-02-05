@@ -33,3 +33,11 @@ Em 2016, a Bellabeat abriu escritórios ao redor do mundo e lançou vários prod
 
 A Urška sabe que uma análise dos dados de consumo disponíveis da Bellabeat revelaria mais oportunidades de crescimento. Ela pediu à equipe de análise de marketing para se concentrar em um produto da Bellabeat e analisar os dados de uso de dispositivos inteligentes para obter informações sobre como as pessoas já estão usando seus dispositivos inteligentes. Assim, por meio dessas informações, ela gostaria de conferir excelentes recomendações sobre como essas tendências podem nortear a estratégia de marketing da Bellabeat.
 
+## Objetivo:
+A Urška solicita que você analise os dados de uso de dispositivos inteligentes para obter informações sobre como os consumidores usam dispositivos inteligentes que não são da Bellabeat. Em seguida, ela quer que você selecione um produto da Bellabeat para aplicar esses insights em sua apresentação. Estas perguntas deverão nortear sua análise:
+ 
+
+
+1.	Quais são algumas das tendências no uso de dispositivos inteligentes?
+2.	Como essas tendências podem se aplicar aos clientes da Bellabeat?
+3.	Como essas tendências podem ajudar a influenciar a estratégia de marketing da Bellabeat?
