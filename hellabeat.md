@@ -35,7 +35,7 @@ As únicas tabelas que estão no formato longo são:
 
 ## Processar.
 
-Existem valores duplicados na tabela sleep_day, estes valores serão excluidos. Também irei criar uma coluna 'day', nos datasets daily_intensities e daily_acivity, para informar nominalmente qual dia da semana as informações foram registrada registadas. Já nos datasets sleep_day e minute_narrow_METs irei criar três colunas, data, dia_semana e horas, E contrapartida irei retirar a coluna que marca essas informações no data frames. Em todos os datasets serão retiradas as colunas Id.
+> Existem valores duplicados na tabela sleep_day, estes valores serão excluidos. Também irei criar uma coluna 'day', nos datasets daily_intensities e daily_acivity, para informar nominalmente qual dia da semana as informações foram registrada registadas. Já nos datasets sleep_day e minute_narrow_METs irei criar três colunas, data, dia_semana e horas, E contrapartida irei retirar a coluna que marca essas informações no data frames. Em todos os datasets serão retiradas as colunas Id.
 
 ## Analisar:
 
