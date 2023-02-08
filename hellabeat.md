@@ -37,7 +37,7 @@ As únicas tabelas que estão no formato longo são:
 
 Existem valores duplicados na tabela sleep_day, estes valores serão excluidos. Também irei criar uma coluna 'day', nos datasets daily_intensities e daily_acivity, para informar nominalmente qual dia da semana as informações foram registrada registadas. Já nos datasets sleep_day e minute_narrow_METs irei criar três colunas, data, dia_semana e horas, E contrapartida irei retirar a coluna que marca essas informações no data frames. Em todos os datasets serão retiradas as colunas Id.
 
-##Analisar:
+## Analisar:
 
 **Sobre a rotina de sono:** 
 	A Fundação Nacionla do Sono dos Estados Unidos, indica que o sono médio da na faixa etária de 18 a 64 ano deve estar entre 420  minutos a 540 minutos. Os usuários analisados apresentaram uma média de 419,17 minutos dormidos e uma mediana de 432,5 minutos dormidos, o que signica que em média e mediana os usuários estão preenchendo o minimo necessário de horas de sono por dia. Domingo e sábado são respectivamente os dias em que os participantes mais dormem.
