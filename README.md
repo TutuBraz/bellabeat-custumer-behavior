@@ -34,9 +34,9 @@ A Urška solicita que você analise os dados de uso de dispositivos inteligentes
  
 
 
-1.	Quais são algumas das tendências no uso de dispositivos inteligentes?
-2.	Como essas tendências podem se aplicar aos clientes da Bellabeat?
-3.	Como essas tendências podem ajudar a influenciar a estratégia de marketing da Bellabeat?
+1. Como os usuários dormem?
+2. Quais são os horários de maior intensidade de exercicios, existe uma rotina?
+3. Tendência no uso do dispositivo.
 
 ## Fonte de dados:
 https://www.kaggle.com/datasets/arashnic/fitbit
