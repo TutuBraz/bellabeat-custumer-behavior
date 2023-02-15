@@ -1,0 +1,314 @@
+\documentclass[a4paper, oneside]{report}    
+\usepackage[top=3cm, bottom=2cm, left=3cm, right=2cm]{geometry}
+\usepackage{lmodern}
+\usepackage{url}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{listings}
+\usepackage{fontspec}
+\setmainfont{Poppins-Bold.ttf}
+
+
+
+
+
+\title{RELATÓRIO BELLABEAT}
+\author{Arthur Braz Santos}
+\date{Fevereiro 2023}
+
+\begin{document}
+
+\maketitle
+\tableofcontents   
+
+\chapter*{Introdução.}
+\addcontentsline{toc}{chapter}{Introdução.}
+
+\begin{quotation}
+O presente relatório tem como objetivo destrinchar a analise os dados de uso de dispositivos inteligentes para obter informações sobre como os consumidores usam dispositivos inteligentes que não são da Bellabeat. 
+\end{quotation}
+
+
+\section*{Tarefa de negócios.}
+\addcontentsline{toc}{section}{Tarefa de negócios.}
+\begin{quotation}
+Identificar o comportamento de cliente que utilizam dispositivos inteligentes que não são Bellabeat, e aplicar esse conhecimento para melhorar o aplicativo da Bellbeat.
+
+Aplicativo Bellabeat: O aplicativo Bellabeat fornece aos usuários dados de saúde relacionados à sua atividade, sono, estresse, ciclo menstrual e hábitos de atenção plena. Esses dados podem ajudar os usuários a entender melhor seus hábitos atuais e tomar decisões saudáveis. O aplicativo Bellabeat se conecta à sua linha de produtos inteligentes de bem-estar.
+\end{quotation}
+
+
+\begin{quotation}
+As perguntas que guiarão a análise são:
+\begin{itemize}
+\item Como os usuários dormem?
+\item Quais são os horários de maior intensidade de exercicios, existe uma rotina?
+\item Tem alguma tendência no uso do dispositivo?
+\end{itemize}
+\end{quotation}
+
+\chapter*{Ferramentas.}
+\addcontentsline{toc}{chapter}{Ferramentas.}
+\begin{quotation}
+O projeto foi totalmente desenvolvido na linguagem python através do Google Colab.
+\end{quotation}
+\begin{quotation}    
+As bibliotecas utilizadas no projeto:
+\begin{itemize}
+\item pandas
+\item datetime
+\item matplotlib.pyplot
+\item seaborn
+\end{itemize}
+\end{quotation}
+
+
+
+
+\chapter*{Preparar.}
+\addcontentsline{toc}{chapter}{Preparar}
+
+\begin{quotation}
+O conjunto de dados foi obtido através do Kaggle e contém um rastreador de condicionamento físico pessoal de trinta usuários do Fitbit, uma empresa estadunidense de eletrônicos e fitness. Trinta usuários elegíveis do Fitbit consentiram com o envio de dados pessoais do rastreador, incluindo os resultados a cada minuto de atividade física, frequência cardíaca e monitoramento do sono. São abrangidas informações sobre atividades diárias, passos e frequência cardíaca que podem ser usadas para explorar os hábitos dos usuários.
+\end{quotation}
+\begin{quotation}
+Os data frames utilizados são:
+    \begin{itemize}
+        \item dailyActivity\_merged.csv
+        \item sleepDay\_merged.csv
+        \item hourlyIntensities\_merged.csv
+    \end{itemize}
+ A única tabela no formato longo é a dailyActivity\_merged.csv
+\end{quotation}
+
+\begin{quotation}
+Fonte de dados:
+\url{https://www.kaggle.com/datasets/arashnic/fitbit}
+\end{quotation}
+\begin{quotation}
+Meta dados: 
+
+\url{https://www.fitabase.com/media/1930/fitabasedatadictionary102320.pdf}
+\end{quotation}
+
+\section*{Integridade.}
+\addcontentsline{toc}{section}{Integridade.}
+
+\begin{quotation}
+    O processo de integridade dos dados consiste em verificar se os dados estão completos, duplicados ou faltando. Para verificação criei uma função que verifica a quantidade de usúarios, a quantidade de dados duplicados e a quantidade de dados faltantes.
+\end{quotation}
+
+
+
+\begin{quotation}
+    A tabela sleep\_day possui 24 usúarios, como ela é vital para análise e possui uma quantidade relativamente próximado total não irei descarta-la. Os outros data frames estão em conformidade. Existem 3 valores duplicados na tabela sleep\_day , estes valores serão excluidos.
+\end{quotation}
+
+
+
+\chapter*{Processar.}
+\addcontentsline{toc}{chapter}{Processar}
+\begin{quotation}
+    Para a expanssão dos valores da coluna que marcar o dia e a hora nos data frames sleep\_day e hour\_intensities foi utlizada uma função que a partir desta coluna foram criadas três nova colunas, uma que marca a data, outra o dia e por último a hora, com objetivo de detalhar melhor os dados.
+    
+    E para o data frame day\_activity foram criadas apenas duas coluna, data e dia\_semana.
+\end{quotation}
+
+\begin{quotation}
+Foi criado um novo data frame com uma junção entre sleep\_day e day\_activity chamado de merge\_sleep\_activity.
+\end{quotation}
+
+\begin{quotation}
+A coluna que horiginalmente marcava a data e a hora foi excluída.
+\end{quotation}
+
+
+
+
+\chapter*{Tem alguma tendência no uso do dispositivo?}
+\addcontentsline{toc}{chapter}{Tem alguma tendência no uso do dispositivo?}    
+
+\begin{figure}[h]
+\centering % para centralizarmos a figura
+\includegraphics[scale=0.6]{plot_tendencia/tendencia.png} 
+\caption{Histograma do tempo de uso de dispositivos inteligentes.}
+\label{figura: Figura 11}
+
+\begin{quotation}
+A média amostral do tempo de uso é de aproximadamente 20 horas e 15 usuários utilizam o dispositvo menos do que a média.
+
+\end{quotation}
+\end{figure}
+
+
+
+\chapter*{Quais são os horários de maior intensidade de exercicios, existe uma rotina?}
+\addcontentsline{toc}{chapter}{Quais são os horários de maior intensidade de exercicios, existe uma rotina?}  
+\begin{quotation}
+    A fitbit mensura a intensidade em uma escala de 0 a 3, sendo 0 o estado sedentário e 3 o estado muito ativo:
+\end{quotation}
+
+\centering
+\begin{tabular}{|c|l|} \hline
+Valor & Estado \\ \hline
+0 & Sedentario \\ \hline
+1 & Leve \\ \hline
+2 & Moderado\\ \hline
+3 & Muito ativo\\ \hline
+\end{tabular}
+
+\begin{figure}[h]
+\centering % para centralizarmos a figura
+\includegraphics[scale=0.6]{plot_intensidade/media_intensidade.png} 
+\caption{Média de intensidade por hora do dia.}
+\label{figura: Figura 7}
+
+\begin{quotation}
+Existe um pico de intensidade às 5 horas da manhã, possívelmente é nesse horário que os usuários estão acordando. Uma queda às 15 horas, possívelmente quando os usúarios vão almoçar. E uma queda às 20 horas, possívelmente quando eles vão dormir.
+
+O período ativo é das 5 às 19, possívelmente é o momento da prática de atividades físicas. Vale ressaltar, que esse período ativo, em média, não apresenta um nivel de estato muito ativo, estando na escala como uma atividade entre sedentária e leve.
+\end{quotation}
+\end{figure}
+
+\begin{figure}[h]
+\centering % para centralizarmos a figura
+\includegraphics[scale=0.6]{plot_intensidade/media_intensidade_semana.png} 
+\caption{Intensidade média dos dias da semana por horas dos dia.}
+\label{figura: Figura 8}
+\begin{quotation}
+Existe um padrão para o comportamento da intensidade média, exceto para o sábado que apresenta um pico de intensidade às 13 horas enquanto que nos outros dias o pico ocorre entre às 17 e 19 horas.
+\end{quotation}
+\end{figure}
+        
+\begin{figure}[h]
+\centering % para centralizarmos a figura
+\includegraphics[scale=0.6]{plot_intensidade/boxplot.png} 
+\caption{Distribuição do tipo nível de atividade dos usuários.}
+\label{figura: Figura 9}
+\begin{quotation}
+A maioria dos usuários passam a maior parte do seu tempo com atividades sedentárias.
+\end{quotation}
+\end{figure}
+
+\begin{figure}[h]
+\centering % para centralizarmos a figura
+\includegraphics[scale=0.6]{plot_intensidade/scater_passos.png} 
+\caption{Gráfico de dispersão dos passos vs calorias.}
+\label{figura: Figura 10}
+\begin{quotation}
+Existe uma correlação moderada em relação ao tempo dormido e o total de passos por dia, o que significa que a quantidade de passos influencia parcialmente na quantidade de sono.
+\end{quotation}
+\end{figure}
+
+ 
+\chapter*{Como os usuários dormem?}
+\addcontentsline{toc}{chapter}{Como os usuários dormem?}
+
+\begin{quotation}
+Segungo a National Sleep Foundation, um instituto de pesquisa sem fins lucrativos dos Estados Unidos, uma pessoa entre 18 e 64 ano deve dormir entre 7 a 9 horas por dia.
+\end{quotation}
+
+
+\begin{figure}[h]
+\centering % para centralizarmos a figura
+\includegraphics[scale=0.6]{plot_dormir/media_min_dia.png}
+\caption{Gráfido de barras da média de tempo dormido em cada dia do período analisado.}
+\label{figura:Figura 1}
+\end{figure}
+\begin{quotation}
+Em média, pelo menos metade do mês os usúarios não dormem o mínimo necessário.
+\end{quotation}
+
+
+\begin{figure}[h]
+\centering % para centralizarmos a figura
+\includegraphics[scale=0.6]{plot_dormir/mediana_min_dia.png} % leia abaixo
+\caption{Gráfico de barras da mediana de tempo dormido em cada dia do período analisado.}
+\label{figura:Figura 2}
+\begin{quotation}
+Em mediana, 11 os usúarios não dormem o mínimo necessário.
+\end{quotation}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering % para centralizarmos a figura
+\includegraphics[scale=0.6]{plot_dormir/violin_plot.png} % leia abaixo
+\caption{Gráficos das distribuições que os usuários passam dormindo em cada dia da semana, o tempo em que os usuáriso passam na cama e o tempo em que os usúarios passam acordados na cama.}
+\label{figura :Figura 3}
+\begin{quotation}
+Domingo é dia em que os participantes mais dormem e sexta-feira é o dia que menos dormem.
+
+Percebe-se uma redução drástica de minutos de sono de domingo para segunda, uma redução que se extende terça. No período de quarta a sexta feira acontece um fênome parecido com o de domingo a terça-feira, na quarta-feira acontece um aumento relativamente pequeno de minutos dormidos em relação ao dia anteriorm,o período do primeiro ao terceiro quartil se posicionam de forma mais enxuta e num intervalo de minutos maior, porém existe uma redução de sono nos próximos dois dias quando no sábado existe um aumento repentino de minutos dormidos.
+
+Isso pode significar uma quebra de rotina do sono, pois a cada três dias, o primeiro dia de sono tem uma qualidade maior do que os próximos dois dias, até que se repete o ciclo, exceto para o períodos de sábado para domingo.
+
+Vale ressaltar que os participantes ficam em mediana 25,5 minutos por dia acordados na cama (foi utilizada a mediana, pois existem muito outliers nesta feature), sendo que, domingo é o dia em que os participantes mais ficam na cama acordados.
+\end{quotation}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering % para centralizarmos a figura
+\includegraphics[scale=0.6]{plot_dormir/scatter_cama_x_dormir.png}
+\caption{Gráfico de dispersão entre o tempo que os usuários passam na cama e o tempo que eles passam dormindo}
+\label{figura:Figura 4}
+\begin{quotation}
+Existe uma correlação de 0.93 entre o tempo em que os usuários passam na cama e o tempo que eles estão adormecidos, o que faz muito sentido. Porem existem alguns pontos no gráfico de dispersão que indicam usuários passando um bom tempo na acordados na cama , seria interessante saber as causas desse fenômeno.
+\begin{itemize}
+\item Celular?
+\item Streamig?
+\item Insônia?
+\end{itemize}
+\end{quotation}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering % para centralizarmos a figura
+\includegraphics[scale=0.6]{plot_dormir/scater_sedentario_dormir.png} 
+\caption{Gráfico de distribuição entre o tempo sedentário dos usúarios e o tempo de sono.}
+\label{figura:Figura 5}
+
+\begin{quotation}
+Existe uma correlação negativa moderada de -0.6 entre o tempo sedentário no da e quantidade de sono, ou seja o maior tempo sedentário no dia influencia parcialmente numa menor quantidade de tempo adormecido.
+\end{quotation}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering % para centralizarmos a figura
+\includegraphics[scale=0.6]{plot_dormir/scater_calorias_dormir.png} % leia abaixo
+\caption{Gráfico de distribuição entre as colorias gastas dos usuários e a quantidade de sono.}
+\label{figura: Figura 6}
+\begin{quotation}
+Não existe correlação entre a quantidade de tempo adormecido e e o gasto calórico.
+\end{quotation}
+\end{figure}
+
+
+\chapter*{Conclusão}
+\addcontentsline{toc}{chapter}{Conclusão.}
+
+\begin{quotation}
+Proposta:
+\end{quotation}
+\begin{quotation}
+Como a maioria dos usúarios não dormem o tempo necessário e nem tem uma constancia, o aplicativo da Bellabeat tem que ter a funcionalidade de performance do sono semanal, informando se o úsuario está domindo o tempo necessário, bem com um comparativo com os dias anteriores. Seria interessante nessa funcionalidade mostrar se essa performance de sono segue uma rotina, como dormir nos mesmo horários, acordar nos mesmos horários e mostrar o tempo dormido.
+\end{quotation}
+\begin{quotation}
+Como o aplicativo se conecta com outros dispositivos da marca, é de interesse da empresa investir em funcionalidade de alerta para hora de dormir, bem com orientações para uma melhor qualidade de sono, visando reduzir o tempo que se passa acordado na cama.
+\end{quotation}
+\begin{quotation}
+Criação de notificações sonoras para a prática de alguma atividade física, principamente nos momentos de maior tempo de momentos sedentários.
+\end{quotation}
+\begin{quotation}
+Criação metas para os usuários quee incentivam a praticar mais exercícios físico. Nessa funcionalidade poderia mostrar quantos passos ou kilomêtros foi percorrido no dia e comparar com o dia anterior e propondo aos usuários darem alguns passos a mais.
+\end{quotation}
+\begin{quotation}
+Criação de notificações, que ressaltam a importancia do uso do dispositivo para aqueles usúarios que não ficam o tempo todo com o dispositivo.
+\end{quotation}
+
+
+
+
+\end{document}
